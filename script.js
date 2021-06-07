@@ -61,7 +61,7 @@ function changeRead(e){
         let ind = e.target.parentElement.parentElement.id
         laLibreria[ind].read = true;
     }
-    
+    saveS(laLibreria);
 }
 
 function tableAppear(){
