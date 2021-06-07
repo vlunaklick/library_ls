@@ -105,7 +105,7 @@ function deleTa(e){
 // Función localStorage
 
 function checkS(){
-    if(localStorage.getItem('lalib')){
+    if(localStorage.getItem('lalib' != [])){
         let val = localStorage.getItem('lalib');
         laLibreria = JSON.parse(val);
     } else{
