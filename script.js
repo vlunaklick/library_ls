@@ -105,10 +105,11 @@ function deleTa(e){
 // Función localStorage
 
 function checkS(){
-    if(localStorage.getItem('lalib' != [])){
+    if(localStorage.getItem('lalib' !== [])){
         let val = localStorage.getItem('lalib');
         laLibreria = JSON.parse(val);
     } else{
+        localStorage.removeItem('lalib')
         laLibreria = [];
         const testVal = new Book("El principito","Antoine de Saint-Exupéry",116,true);
         laLibreria.push(testVal);
