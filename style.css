@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap');
 
 :root{
-    --header-back: #2c3e50;
-    --font-header: #ecf0f1;
+    --header-col: #34495e;
+    --header-back: #7a7a7a13;
+    --font-header: #000000;
     --background: #ecf0f1;
     --border-buttons: #000;
     --btn-delete: #e74c3c;
@@ -19,18 +20,22 @@ body{
 }
 header{
     width: 100%;
+    padding: 2rem 0 0 0;
     height: 80px;
-    border-bottom: 1px solid #000;
     display: flex;
     align-items: center;
-    background-color: var(--header-back);
-    box-shadow: 0 0 2px 1px #000;
+    justify-content: center;
+    border-bottom: 1px solid #000;
+    margin-bottom: 1rem;
+    background-color: var(--header-col);
 }
+
 #head-h{
-    margin-left: 10px;
-    color: var(--font-header);
+    color: var(--background);
     text-shadow: 0 0 2px #000;
-    font-size: 35px;
+    font-size: 45px;
+    font-weight: 600;
+    margin: 0;
 }
 #container{
     margin: 0 auto;
@@ -50,6 +55,10 @@ header{
     margin-bottom: 10px;
     font-size: 25px;
 }
+.newBo{
+    font-weight: 400;
+    margin: 0;
+}
 .formbox{
     border:none;
     width: 180px;
@@ -61,6 +70,12 @@ header{
     cursor: text;
     outline: none;
 }
+
+.tits{
+    font-weight: 400;
+    color: white;
+}
+
 #checkerau{
     display: inline-block;
     margin-right: 10px;
@@ -96,6 +111,7 @@ header{
     cursor: pointer;
     background-color: var(--btn-read);
     color: white;
+    font-weight: 300;
 }
 .pread:hover{
     background-color: var(--btn-read-hover);
@@ -109,6 +125,7 @@ header{
     border: 1px solid #000;
     border-radius: 3px;
     color: white;
+    font-weight: 300;
 }
 .pDel:hover{
     background-color: var(--btn-del-hover);
@@ -130,6 +147,8 @@ header{
 th, td{
     border-bottom: 1px solid rgb(161, 161, 161);
     padding: 10px 8px;
+    font-weight: 300;
+    color: var(--font-header);
 }
 .buttonsss{
     width: 10%;

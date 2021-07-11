@@ -12,12 +12,14 @@
 
     <main id="container">
 
+        
+
         <div id="addbooks">
-            <h3>New book:</h3>
+            <h3 class="newBo">New book:</h3>
             <form id="adding" action="">
                 <input id="titau" class="formbox" type="text" placeholder="Title of the book" required>
                 <input id="auau" class="formbox" type="text" placeholder="Author of the book" required>
-                <input id="paau" class="formbox" type="number" placeholder="Pages of the book" required>
+                <input id="paau" class="formbox" min="0" type="number" placeholder="Pages of the book" required>
                 <div id="checkerau">
                     <input id="readau" type="checkbox" name="read"><label for="readau">Already read</label>
                 </div>
@@ -29,11 +31,11 @@
             <table id="tabal-b">
                 <tbody>
                     <tr class="first-row">
-                        <th>Name</th>
-                        <th>Author</th>
-                        <th>Pages</th>
-                        <th class="buttonsss">Status</th>
-                        <th class="buttonsss"></th>
+                        <th class="tits">Name</th>
+                        <th class="tits">Author</th>
+                        <th class="tits">Pages</th>
+                        <th class="tits buttonsss">Status</th>
+                        <th class="tits buttonsss"></th>
                     </tr>
                 </tbody>
                 <tbody id="addons">
