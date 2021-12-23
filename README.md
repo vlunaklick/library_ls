@@ -7,12 +7,6 @@
 
 ### ✨ [Live View](https://vlunaklick.github.io/library_ls/)
 
-### 🔧 Future Addons
-
-   * Nocturne mode.
-
-   * Better animations.
-
 ## Author
 
 👤 **vlunaklick**
