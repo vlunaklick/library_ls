@@ -1,16 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap');
 
 :root{
-    --header-col: #34495e;
+    --header-col: #323F4B;
     --header-back: #7a7a7a13;
-    --font-header: #000000;
-    --background: #ecf0f1;
+    --font-header: #102A43;
+    --background: #F0F4F8;
     --border-buttons: #000;
-    --btn-delete: #e74c3c;
-    --btn-read: #3498db;
-    --btn-read-hover: #2980b9;
-    --btn-del-hover: #c0392b;
-    --form-bag: #34495e;
+    --btn-delete: #9FB3C8;
+    --btn-read: #486581;
+    --btn-read-hover: #334E68;
+    --btn-del-hover: #829AB1;
+    --form-bag: #627D98;
+    --font-btns: #F0F4F8;
+    --add-book: #334e68;
+    --add-book-hover: #243B53;
+    --bag-form:#d9e2ec;
+
+    --shadow-color: 210deg 11% 60%;
+    --shadow-elevation-low:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+    --shadow-elevation-medium:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+    --shadow-elevation-high:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
 }
 
 *, *::before, *::after {
@@ -52,61 +76,56 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Reset CSS */
 
 #header{
-    padding: .75rem 0;
+    padding: .75rem 0 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #000;
-    background-color: var(--header-col);
+    background-color: var(--background);
 }
 
 #header-title{
-    color: var(--background);
-    text-shadow: 0 0 2px #000;
-    font-size: 45px;
+    color: var(--font-header);
+    font-size: 2rem;
     font-weight: 600;
-    margin: 0;
 }
+
 #container{
-    margin: 0 auto;
+    width: 100%;
     padding: 1rem 1.5rem;
-    max-width: 856.383px;
-    height: 100%;
+    min-height: calc(100vh - 3.75rem);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 2rem;
+    background-color: var(--background);
 }
 
 #form-addbook{
-    border-bottom: 1px solid var(--border-buttons);
-    padding-bottom: 20px;
-    gap: 1rem;
+    gap: .75rem;
     display: flex;
     flex-direction: column;
 }
 
 .form-addbook-title{
-    font-weight: 800;
-    margin: 0;
-    font-size: 25px;
-    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.5rem;
     text-align: center;
+    color: var(--font-header);
 }
 .form-addbook-form-box{
-    border:none;
-    width: 180px;
-    height: 25px;
-    border-radius: 5px;
-    padding: 8px;
-    border: 1px solid var(--border-buttons);
+    border: .0625rem solid #ecf0f5;
+    width: 11.25rem;
+    height: 2.5rem;
+    border-radius: .3125rem;
+    padding: .5rem;
     cursor: text;
     outline: none;
+    background-color: var(--bag-form);
 }
 
 .library-table-firstrow-titles{
     font-weight: 400;
-    color: white;
+    color: var(--font-btns);
 }
 
 #form-addbook-form-checker{
@@ -114,7 +133,7 @@ p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 #form-addbook-form-checker label{
-    margin-left: 5px;
+    margin-left: .3125rem;
     cursor: pointer;
 }
 #form-addbook-form{
@@ -130,65 +149,84 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 #form-addbook-form-added{
     cursor: pointer;
-    width: 100px;
-    height: 40px;
+    width: 6.25rem;
+    height: 2.5rem;
+    background-color: var(--add-book);
+    outline: none;
+    border: none;
+    border-radius: .1875rem;
+    color: var(--font-btns)
 }
 
 #form-addbook-form-added:hover{
-    box-shadow: 0 0 2px #000;
+    box-shadow: var(--shadow-elevation-low);
+    background-color: var(--add-book-hover);
 }
 
 #library{
-    margin-top: 10px;
     height: 100%;
-    width: 100%;
+    min-width: 51.0625rem;
 }
-.pread{
+.btn-read{
     padding: .5rem 1rem;
-    border: 1px solid #000;
-    border-radius: 3px;
+    border-radius: .1875rem;
+    border: none;
     cursor: pointer;
     background-color: var(--btn-read);
-    color: white;
+    color: var(--font-btns);
     font-weight: 300;
 }
-.pread:hover{
+.btn-read:hover{
     background-color: var(--btn-read-hover);
-    box-shadow: 0 0 2px #000;
+    box-shadow: var(--shadow-elevation-low);
 }
-.pDel{
+.btn-delete{
     background-color: var(--btn-delete);
     padding: .5rem 1rem;
     cursor: pointer;
-    border: 1px solid #000;
-    border-radius: 3px;
-    color: white;
+    border: none;
+    border-radius: .1875rem;
+    color: var(--font-btns);
     font-weight: 300;
 }
-.pDel:hover{
+.btn-delete:hover{
     background-color: var(--btn-del-hover);
-    box-shadow: 0 0 2px #000;
+    box-shadow: var(--shadow-elevation-low);
 }
 #library-table{
     width: 100%;
     border-spacing: 0;
 }
 .library-table-firstrow{
-    height: 50px;
-    border-bottom: 1px solid rgb(161, 161, 161);
     text-align: left;
-    font-size: 20px;
+    font-size: 1.2rem;
     background-color: var(--form-bag);
-    color: var(--font-header);
-    box-shadow: 0 0 2px #000;
+    box-shadow: var(--shadow-elevation-low);
 }
 th, td{
-    border-bottom: 1px solid rgb(161, 161, 161);
-    padding: 10px 8px;
+    border-bottom: .0625rem solid rgb(161, 161, 161);
+    padding: .625rem .5rem;
     font-weight: 300;
-    color: var(--font-header);
 }
 .library-table-firstrow-titles-btn{
-    width: 10%;
+
     white-space: nowrap;
+}
+
+#lib-status{
+    width: calc(7.785437rem - 1rem)
+}
+
+#lib-empty{
+    width: calc(6.35625rem - 1rem);
+}
+
+#lib-name{
+    width: calc(18.914125rem - 1rem);
+}
+#lib-author{
+    width: calc(13.505187rem - 1rem);
+}
+#lib-pages{
+    width: calc(4.65rem - 1rem);
 }

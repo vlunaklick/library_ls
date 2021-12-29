@@ -6,13 +6,14 @@ const pageN = document.getElementById('form-addbook-form-pages');
 const checkN = document.getElementById('form-addbook-form-checker-check');
 const addN = document.getElementById('form-addbook-form');
 const bookLib = document.getElementById('library-table-addedrows');
-let btnDel = [];
-let btnRed = [];
+let btnDel = Array();
+let btnRed = Array();
+let library = checkLocalStorage();
 
 addN.addEventListener('submit', e =>{
     e.preventDefault();
-    agregarLibre();
-    tableAppear();
+    addBook();
+    showInTable();
     clearForm();
 });
 
@@ -25,13 +26,10 @@ function Book(name,auth,pages,read){
     this.read = read;
 }
 
-let laLibreria;
-
-
-function agregarLibre(){
-    let valP = new Book(titleN.value,authN.value,pageN.value,checkN.checked);
-    laLibreria.push(valP);
-    saveS(laLibreria);
+function addBook(){
+    let valP = new Book(titleN.value, authN.value, pageN.value, checkN.checked);
+    library.push(valP);
+    saveLocalStorage(library);
 }
 
 function clearForm(){
@@ -45,82 +43,85 @@ function checkStatus(check){
     return (check == true) ? "Read" : "Not Read"
 }
 
-function checkBook(libro){
-    for (let i = 0; i < laLibreria.length;i++){
-        if (laLibreria[i] == libro) return i
+function seeBookPlace(libro){
+    for (let i = 0; i < library.length;i++){
+        if (library[i] == libro){
+            return i
+        }
     }
 }
 
-function changeRead(e){
+function changeReadOption(e){
     if(e.target.textContent == "Read"){
         e.target.textContent = "Not Read";
         let ind = e.target.parentElement.parentElement.id
-        laLibreria[ind].read = false;
+        library[ind].read = false;
     } else {
         e.target.textContent = "Read"
         let ind = e.target.parentElement.parentElement.id
-        laLibreria[ind].read = true;
+        library[ind].read = true;
     }
-    saveS(laLibreria);
+    saveLocalStorage(library);
 }
 
-function tableAppear(){
-    bookLib.innerHTML = ""; 
-    laLibreria.forEach((libro) =>{
-        let numI = checkBook(libro);
-        const addBookk = `
-                    <tr id="${numI}" class="book">
-                        <td>${libro.name}</td>
-                        <td>${libro.auth}</td>
-                        <td>${libro.pages}</td>
-                        <td class="library-table-firstrow-titles-btn">
-                            <button class="pread">${checkStatus(libro.read)}</button>
-                        </td>
-                        <td class="library-table-firstrow-titles-btn">
-                            <button class="pDel ${numI}">Delete</button>
-                        </td>
-                    </tr>
-            `;
-        bookLib.insertAdjacentHTML("afterbegin", addBookk);
-    });
-    btnDel = Array.from(document.getElementsByClassName('pDel'));
-    btnRed = Array.from(document.getElementsByClassName('pread'));
-    btnDel.forEach(function(btn){
-        btn.addEventListener('click', e=>{
-            deleTa(e);
+function showInTable(){
+    bookLib.innerHTML = "";
+    if(library){
+        library.forEach((libro) =>{
+            let numI = seeBookPlace(libro);
+            const addBookk = `
+                        <tr id="${numI}" class="book">
+                            <td>${libro.name}</td>
+                            <td>${libro.auth}</td>
+                            <td>${libro.pages}</td>
+                            <td class="library-table-firstrow-titles-btn">
+                                <button class="btn-read">${checkStatus(libro.read)}</button>
+                            </td>
+                            <td class="library-table-firstrow-titles-btn">
+                                <button class="btn-delete ${numI}">Delete</button>
+                            </td>
+                        </tr>
+                `;
+            bookLib.insertAdjacentHTML("afterbegin", addBookk);
         });
-    });
-    btnRed.forEach(function(btn) {
-        btn.addEventListener('click', changeRead)
-    });
+        btnDel = Array.from(document.getElementsByClassName('btn-delete'));
+        btnRed = Array.from(document.getElementsByClassName('btn-read'));
+        btnDel.forEach(function(btn){
+            btn.addEventListener('click', e=>{
+                deleteBook(e);
+            });
+        });
+        btnRed.forEach(function(btn) {
+            btn.addEventListener('click', changeReadOption)
+        });
+    }
 }
 
-function deleTa(e){
+function deleteBook(e){
     let busc = e.target.classList[1];
-    laLibreria.splice(busc,1);
-    saveS(laLibreria);
-    tableAppear();
+    library.splice(busc,1);
+    saveLocalStorage(library);
+    showInTable(library);
 }
 
 // Función localStorage
 
-function checkS(){
-    if(localStorage.getItem('lalib') !== "[]"){
+function checkLocalStorage(){
+    let library = Array();
+    if(localStorage.getItem('lalib') !== "[]" && localStorage.getItem('lalib') !== null ){
         let val = localStorage.getItem('lalib');
-        laLibreria = JSON.parse(val);
+        library = JSON.parse(val);
     } else{
         localStorage.removeItem('lalib')
-        laLibreria = [];
         const testVal = new Book("El principito","Antoine de Saint-Exupéry",116,true);
-        laLibreria.push(testVal);
-    }  
+        library.push(testVal);
+    }
+    return library
 }
 
-function saveS(array){
+function saveLocalStorage(array){
     let subida = JSON.stringify(array);
-    localStorage.setItem('lalib',subida);
+    localStorage.setItem('lalib', subida);
 }
 
-
-checkS()
-tableAppear()
+showInTable()

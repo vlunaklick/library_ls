@@ -18,7 +18,7 @@
                 <input id="form-addbook-form-author" class="form-addbook-form-box" type="text" placeholder="Author of the book" required>
                 <input id="form-addbook-form-pages" class="form-addbook-form-box" min="0" type="number" placeholder="Pages of the book" required>
                 <div id="form-addbook-form-checker">
-                    <input id="form-addbook-form-checker-check" type="form-addbook-form-checker-checkbox" name="read"><label for="form-addbook-form-checker-check">Already read</label>
+                    <input id="form-addbook-form-checker-check" type="checkbox" name="read"><label for="form-addbook-form-checker-check">Already read</label>
                 </div>
                 <input id="form-addbook-form-added" type="submit" value="Add book">
             </form>
@@ -28,11 +28,11 @@
             <table id="library-table">
                 <tbody>
                     <tr class="library-table-firstrow">
-                        <th class="library-table-firstrow-titles">Name</th>
-                        <th class="library-table-firstrow-titles">Author</th>
-                        <th class="library-table-firstrow-titles">Pages</th>
-                        <th class="library-table-firstrow-titles library-table-firstrow-titles-btn">Status</th>
-                        <th class="library-table-firstrow-titles library-table-firstrow-titles-btn"></th>
+                        <th id="lib-name" class="library-table-firstrow-titles">Name</th>
+                        <th id="lib-author" class="library-table-firstrow-titles">Author</th>
+                        <th id="lib-pages" class="library-table-firstrow-titles">Pages</th>
+                        <th id="lib-status" class="library-table-firstrow-titles library-table-firstrow-titles-btn">Status</th>
+                        <th id="lib-empty" class="library-table-firstrow-titles library-table-firstrow-titles-btn"></th>
                     </tr>
                 </tbody>
                 <tbody id="library-table-addedrows">
