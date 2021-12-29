@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> In this project I recreated a kind of "Library". You can add the book you want, and also toogle it if you alredy read one book. It functions with local storage, so your things are going to stay in the browser after you close it.
+> In this project I recreated a kind of "Library". You can add the book you want, and also toogle it if you alredy read one book. It works with local storage, so your things are going to stay in the browser after you close it.
 
 ### ✨ [Live View](https://vlunaklick.github.io/library_ls/)
 
