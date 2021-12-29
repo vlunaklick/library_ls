@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
+    <meta content='width=device-width,initial-scale=1' name='viewport'>
     <title>Your library</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header id="header">
-        <h1 id="header-title">Library: Your bookshelf</h1>
-    </header>
-
     <main id="container">
-        <div id="form-addbook">
-            <h3 class="form-addbook-title">New book</h3>
+        <header id="header">
+            <h1 id="header-title">Library: Your bookshelf</h1>
             <form id="form-addbook-form" action="">
-                <input id="form-addbook-form-title" class="form-addbook-form-box" type="text" placeholder="Title of the book" required>
-                <input id="form-addbook-form-author" class="form-addbook-form-box" type="text" placeholder="Author of the book" required>
-                <input id="form-addbook-form-pages" class="form-addbook-form-box" min="0" type="number" placeholder="Pages of the book" required>
-                <div id="form-addbook-form-checker">
-                    <input id="form-addbook-form-checker-check" type="checkbox" name="read"><label for="form-addbook-form-checker-check">Already read</label>
+                <div class="form-addbook-form-left">
+                    <input id="form-addbook-form-title" class="form-addbook-form-box" type="text" placeholder="Title of the book" required>
+                    <input id="form-addbook-form-author" class="form-addbook-form-box" type="text" placeholder="Author of the book" required>
+                    <input id="form-addbook-form-pages" class="form-addbook-form-box" min="0" type="number" placeholder="Pages of the book" required>
                 </div>
-                <input id="form-addbook-form-added" type="submit" value="Add book">
+                <div class="form-addbook-form-rigth">
+                    <div id="form-addbook-form-checker">
+                        <input id="form-addbook-form-checker-check" type="checkbox" name="read"><label for="form-addbook-form-checker-check">Already read</label>
+                    </div>
+                    <input id="form-addbook-form-added" type="submit" value="Add book">
+                </div>
             </form>
-        </div>
+
+        </header>
+            
 
         <div id="library">
             <table id="library-table">
@@ -31,8 +34,7 @@
                         <th id="lib-name" class="library-table-firstrow-titles">Name</th>
                         <th id="lib-author" class="library-table-firstrow-titles">Author</th>
                         <th id="lib-pages" class="library-table-firstrow-titles">Pages</th>
-                        <th id="lib-status" class="library-table-firstrow-titles library-table-firstrow-titles-btn">Status</th>
-                        <th id="lib-empty" class="library-table-firstrow-titles library-table-firstrow-titles-btn"></th>
+                        <th id="lib-status" class="library-table-firstrow-titles">Status</th>
                     </tr>
                 </tbody>
                 <tbody id="library-table-addedrows">
