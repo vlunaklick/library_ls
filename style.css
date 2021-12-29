@@ -51,7 +51,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Reset CSS */
 
-#title{
+#header{
     padding: .75rem 0;
     display: flex;
     align-items: center;
@@ -60,7 +60,7 @@ p, h1, h2, h3, h4, h5, h6 {
     background-color: var(--header-col);
 }
 
-#head-h{
+#header-title{
     color: var(--background);
     text-shadow: 0 0 2px #000;
     font-size: 45px;
@@ -78,7 +78,7 @@ p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-#addbooks{
+#form-addbook{
     border-bottom: 1px solid var(--border-buttons);
     padding-bottom: 20px;
     gap: 1rem;
@@ -86,14 +86,14 @@ p, h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
 }
 
-.newBo{
+.form-addbook-title{
     font-weight: 800;
     margin: 0;
     font-size: 25px;
     text-decoration: underline;
     text-align: center;
 }
-.formbox{
+.form-addbook-form-box{
     border:none;
     width: 180px;
     height: 25px;
@@ -104,20 +104,20 @@ p, h1, h2, h3, h4, h5, h6 {
     outline: none;
 }
 
-.tits{
+.library-table-firstrow-titles{
     font-weight: 400;
     color: white;
 }
 
-#checkerau{
+#form-addbook-form-checker{
     display: flex;
     align-items: center;
 }
-#checkerau label{
+#form-addbook-form-checker label{
     margin-left: 5px;
     cursor: pointer;
 }
-#adding{
+#form-addbook-form{
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
@@ -125,20 +125,20 @@ p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-#readau{
+#form-addbook-form-checker-check{
     cursor: pointer;
 }
-#subau{
+#form-addbook-form-added{
     cursor: pointer;
     width: 100px;
     height: 40px;
 }
 
-#subau:hover{
+#form-addbook-form-added:hover{
     box-shadow: 0 0 2px #000;
 }
 
-#books-library{
+#library{
     margin-top: 10px;
     height: 100%;
     width: 100%;
@@ -169,11 +169,11 @@ p, h1, h2, h3, h4, h5, h6 {
     background-color: var(--btn-del-hover);
     box-shadow: 0 0 2px #000;
 }
-#tabal-b{
+#library-table{
     width: 100%;
     border-spacing: 0;
 }
-.first-row{
+.library-table-firstrow{
     height: 50px;
     border-bottom: 1px solid rgb(161, 161, 161);
     text-align: left;
@@ -188,7 +188,7 @@ th, td{
     font-weight: 300;
     color: var(--font-header);
 }
-.buttonsss{
+.library-table-firstrow-titles-btn{
     width: 10%;
     white-space: nowrap;
 }

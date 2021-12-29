@@ -1,11 +1,11 @@
 // Constantes new book
 
-const titleN = document.getElementById('titau');
-const authN = document.getElementById('auau');
-const pageN = document.getElementById('paau');
-const checkN = document.getElementById('readau');
-const addN = document.getElementById('adding');
-const bookLib = document.getElementById('addons');
+const titleN = document.getElementById('form-addbook-form-title');
+const authN = document.getElementById('form-addbook-form-author');
+const pageN = document.getElementById('form-addbook-form-pages');
+const checkN = document.getElementById('form-addbook-form-checker-check');
+const addN = document.getElementById('form-addbook-form');
+const bookLib = document.getElementById('library-table-addedrows');
 let btnDel = [];
 let btnRed = [];
 
@@ -73,10 +73,10 @@ function tableAppear(){
                         <td>${libro.name}</td>
                         <td>${libro.auth}</td>
                         <td>${libro.pages}</td>
-                        <td class="buttonsss">
+                        <td class="library-table-firstrow-titles-btn">
                             <button class="pread">${checkStatus(libro.read)}</button>
                         </td>
-                        <td class="buttonsss">
+                        <td class="library-table-firstrow-titles-btn">
                             <button class="pDel ${numI}">Delete</button>
                         </td>
                     </tr>

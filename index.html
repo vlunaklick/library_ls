@@ -6,37 +6,36 @@
 </head>
 <body>
 
-    <header id="title">
-        <h1 id="head-h">Library: Your bookshelf</h1>
+    <header id="header">
+        <h1 id="header-title">Library: Your bookshelf</h1>
     </header>
 
     <main id="container">
-
-        <div id="addbooks">
-            <h3 class="newBo">New book</h3>
-            <form id="adding" action="">
-                <input id="titau" class="formbox" type="text" placeholder="Title of the book" required>
-                <input id="auau" class="formbox" type="text" placeholder="Author of the book" required>
-                <input id="paau" class="formbox" min="0" type="number" placeholder="Pages of the book" required>
-                <div id="checkerau">
-                    <input id="readau" type="checkbox" name="read"><label for="readau">Already read</label>
+        <div id="form-addbook">
+            <h3 class="form-addbook-title">New book</h3>
+            <form id="form-addbook-form" action="">
+                <input id="form-addbook-form-title" class="form-addbook-form-box" type="text" placeholder="Title of the book" required>
+                <input id="form-addbook-form-author" class="form-addbook-form-box" type="text" placeholder="Author of the book" required>
+                <input id="form-addbook-form-pages" class="form-addbook-form-box" min="0" type="number" placeholder="Pages of the book" required>
+                <div id="form-addbook-form-checker">
+                    <input id="form-addbook-form-checker-check" type="form-addbook-form-checker-checkbox" name="read"><label for="form-addbook-form-checker-check">Already read</label>
                 </div>
-                <input id="subau" type="submit" value="Add book">
+                <input id="form-addbook-form-added" type="submit" value="Add book">
             </form>
         </div>
 
-        <div id="books-library">
-            <table id="tabal-b">
+        <div id="library">
+            <table id="library-table">
                 <tbody>
-                    <tr class="first-row">
-                        <th class="tits">Name</th>
-                        <th class="tits">Author</th>
-                        <th class="tits">Pages</th>
-                        <th class="tits buttonsss">Status</th>
-                        <th class="tits buttonsss"></th>
+                    <tr class="library-table-firstrow">
+                        <th class="library-table-firstrow-titles">Name</th>
+                        <th class="library-table-firstrow-titles">Author</th>
+                        <th class="library-table-firstrow-titles">Pages</th>
+                        <th class="library-table-firstrow-titles library-table-firstrow-titles-btn">Status</th>
+                        <th class="library-table-firstrow-titles library-table-firstrow-titles-btn"></th>
                     </tr>
                 </tbody>
-                <tbody id="addons">
+                <tbody id="library-table-addedrows">
                     
                 </tbody>
             </table>
